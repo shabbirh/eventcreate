@@ -23,7 +23,7 @@ namespace eventcreate2
             {
                 showUsageOnly = true;
             }
-            else 
+            else
             {
                 for (int i = 0; i < args.Length; i++)
                 {
@@ -64,7 +64,7 @@ namespace eventcreate2
             {
                 Console.WriteLine(
                     "\r\nA security error occurred, try running with elevated " +
-                    "security permissions (Run as Administrator).\r\n\r\n" + 
+                    "security permissions (Run as Administrator).\r\n\r\n" +
                     ex.Message);
                 return;
             }
@@ -72,19 +72,19 @@ namespace eventcreate2
             EventLogEntryType type = EventLogEntryType.Information;
             switch (typeString.ToLower())
             {
-                case "error": 
+                case "error":
                     type = EventLogEntryType.Error; break;
 
-                case "failureaudit": 
+                case "failureaudit":
                     type = EventLogEntryType.FailureAudit; break;
 
-                case "information": 
+                case "information":
                     type = EventLogEntryType.Information; break;
 
-                case "successaudit": 
+                case "successaudit":
                     type = EventLogEntryType.SuccessAudit; break;
 
-                case "warning": 
+                case "warning":
                     type = EventLogEntryType.Warning; break;
             }
 
@@ -96,6 +96,7 @@ namespace eventcreate2
         private static void showUsage()
         {
             Console.Write(Resources.Usage);
+            Console.ReadKey();
         }
     }
 }
